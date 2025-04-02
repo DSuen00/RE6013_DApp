@@ -1,43 +1,16 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drawing Web Application</title>
-    <style>
-        .container {
-            display: flex;
-            align-items: flex-start; /* Align items to the top */
-            gap: 20px;
-        }
-
-        .image-container img {
-            width: 400px;
-        }
-
-        .text-container {
-            max-width: 400px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
 </head>
+
 <body>
-    <h1>Learn how to draw!</h1>
-    <form method="post">
-        <label for="prompt">What do you want to draw?</label><br><br>
-        <input type="text" id="prompt" name="prompt" required><br><br>
-        <input type="submit" value="Generate Image">
-    </form>
-    {% if image_path %}
-        <div class="container">
-            <div class="image-container">
-                <h2>Let's draw!</h2>
-                <img src="{{ image_path }}" alt="Generated Image">
-            </div>
-            <div class="text-container">
-                <h2>Explanation:</h2>
-                <p>{{ explanation }}</p>
-            </div>
-        </div>
-    {% endif %}
+    <div class="container">
+        <h2>Welcome to Financial Web Application</h2>
+        <form action="/makersuite" method="post">
+            <input type = "submit" value="Gemini Chatbot">
+        </form>
+        <form action="/paynow" method="post">
+            <input type = "submit" value="Transfer Money">
+        </form>
+    </div>
 </body>
-</html>
